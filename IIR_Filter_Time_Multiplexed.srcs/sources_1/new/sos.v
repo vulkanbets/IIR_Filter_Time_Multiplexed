@@ -83,16 +83,8 @@ module sos
     
     
     add_Fixed # ( .WI1(WI_in), .WF1(WF_in), .WI2(WI_in), .WF2(WF_in),   // a1 a2 adder
-                    .WIO(WI_in), .WFO(WF_in) )                                                                           // a1 a2 adder
+                    .WIO(WI_in), .WFO(WF_in) )                                                        // a1 a2 adder
     a1_a2_adder( .in1(mult_a1.out), .in2(mult_a2.out), .out() );
-    
-    
-    
-    
-    
-    
-//    mult_Fixed # ( .WI1(WI_in), .WF1(WF_in + WF_coeff), .WI2(top.WIS), .WF2(top.WFS), .WIO(WI_in), .WFO(WF_in + WF_coeff) )     // scalar out
-//    scalar_out( .in1(b0_b1_a1_adder.out), .in2(16'h0800), .out()  );                                                             // scalar out
     
     
 endmodule

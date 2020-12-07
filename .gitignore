@@ -1,5 +1,6 @@
 IIR_Filter_Time_Multiplexed.xpr
 tb_IIR_Filter_Time_Multiplexed_behav.wcfg
+/IIR_Filter_Time_Multiplexed.srcs/sim_1/imports/IIR_Filter
 /IIR_Filter_Time_Multiplexed.cache/
 /IIR_Filter_Time_Multiplexed.hw/
 /IIR_Filter_Time_Multiplexed.ip_user_files/

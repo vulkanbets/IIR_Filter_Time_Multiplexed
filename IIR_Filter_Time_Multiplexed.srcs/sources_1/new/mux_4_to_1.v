@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module mux_4_to_1 # ( parameter M = 4, WIS = 5, WFS = 11, NUM_OF_BITS = $clog2(M) )
+module mux_4_to_1 # ( parameter M = 4, WIS = 2, WFS = 8, NUM_OF_BITS = $clog2(M) )
 (
     input [NUM_OF_BITS - 1 : 0] cascade_counter,
     input [WIS + WFS - 1 : 0] in0,

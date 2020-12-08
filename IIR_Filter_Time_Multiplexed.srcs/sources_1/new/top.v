@@ -2,7 +2,8 @@
 
 module top # ( parameter M = 4, WI = 3, WF = 29, WIS = 5, WFS = 11, WI_coeff = 2, WF_coeff = 8 )
 (
-    input CLK
+    input CLK,
+    output reg [WI + WF - 1 : 0] answer
 );
     localparam NUM_OF_BITS = $clog2(M);
     reg [NUM_OF_BITS - 1 : 0] cascade_counter = 0;                                          // Counter going through each cascaded SOS
@@ -35,5 +36,9 @@ module top # ( parameter M = 4, WI = 3, WF = 29, WIS = 5, WFS = 11, WI_coeff = 2
     
     sos # ( .WI_in(WI), .WF_in(WF), .WL(WI + WF), .WI_coeff(WI_coeff), .WF_coeff(WF_coeff) )
         sos( .CLK(CLK), .cascade_counter(cascade_counter), .in(scalar_1.out), .b0(b0_mux.out), .b1(b1_mux.out), .b2(b2_mux.out), .a1(a1_mux.out), .a2(a2_mux.out), .out() );
+    
+    
+    always @ (posedge CLK) if(cascade_counter == 3) answer <= sos.b0_b1_a1_adder.out;
+    
     
 endmodule
